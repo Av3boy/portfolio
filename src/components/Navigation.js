@@ -1,0 +1,68 @@
+import { Link } from "react-scroll"
+import "./css/SideBar.css";
+
+const SideBar = () => {
+  return (
+    <div className="responsive-nav">
+
+      <i className="fa fa-bars" id="menu-toggle"></i>
+
+      <div id="menu" className="menu">
+        <i className="fa fa-times" id="menu-close"></i>
+
+        <div className="menu-container">
+          <div className="container" style={{  backgroundColor: "#1c1f20", maxHeight: "calc(100vh - 50px)", overflow: "scroll" }}>
+            <div className="image">
+
+              <Link to="about-me" spy={true} smooth={true}>
+                <img src="assets/images/author-image.jpg" alt="" />
+              </Link>
+            </div>
+
+            <div className="author-content">
+              <h4>Antti Veikkolainen</h4>
+              <span>Software Engineer</span>
+            </div>
+
+            <nav id="main-nav" className="main-nav" role="navigation">
+              <ul className="main-menu">
+                <li>
+                  <Link to="aboutme-section"activeClass="menu-active" spy={true} smooth={true} className="menu-override">About</Link>
+                </li>
+                <li>
+                  <Link to="experience-section" activeClass="menu-active" spy={true} smooth={true} className="menu-override">Experience</Link>
+                </li>
+                <li>
+                  <Link to="myworks-section" activeClass="menu-active" spy={true} smooth={true} className="menu-override">Projects</Link>
+                </li>
+                <li>
+                  <Link to="education-section" activeClass="menu-active" spy={true} smooth={true} className="menu-override">Education</Link>
+                </li>
+                <li>
+                  <Link to="contact-section" activeClass="menu-active" spy={true} smooth={true} className="menu-override">Contact Me</Link>
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+
+          <div className="social-network" style={{ backgroundColor: "rgb(28, 31, 32)" }}>
+            <ul className="soial-icons">
+              <li>
+                <a className="linkedInColor" href="https://www.linkedin.com/in/anttiveikkolainen/" rel="noreferrer" target="_blank"><i className="fa fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a className="instagramColor" href="https://www.instagram.com/av3.dev/" rel="noreferrer" target="_blank"><i className="fa fa-instagram"></i></a>
+              </li>
+              <li>
+                <a className="gitHubColor" href="https://github.com/Av3boy/" rel="noreferrer" target="_blank"><i className="fa fa-github"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SideBar;
